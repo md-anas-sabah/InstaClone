@@ -3,7 +3,20 @@ import "./App.css";
 import Post from "./Post";
 
 function App() {
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([
+    {
+      username: "md_anas_sabah",
+      caption: "Make Them Stop and Stare😎",
+      imageURL:
+        "https://media-exp1.licdn.com/dms/image/C5603AQGAtM_odmLb7g/profile-displayphoto-shrink_200_200/0/1638384912500?e=1654732800&v=beta&t=TGs1dlGQfsjY2RtyG8fP03YS4zGsiIFEQf_VCPZYGE0",
+    },
+    {
+      username: "iamsrk",
+      caption:
+        "Shah Rukh agar thoda ruk bhi gaya to pathan ko kaise rokoge.. Apps aur Abs sbko bana dalunga..",
+      imageURL: "https://im.rediff.com/movies/2022/mar/28insta1.jpg",
+    },
+  ]);
 
   return (
     <div className="app">
@@ -14,19 +27,14 @@ function App() {
           alt=""
         />
       </div>
-      {/* header */}
-      <Post
-        username="md_anas_sabah"
-        caption="Make Them Stop and Stare😎"
-        imageURL="https://media-exp1.licdn.com/dms/image/C5603AQGAtM_odmLb7g/profile-displayphoto-shrink_200_200/0/1638384912500?e=1654732800&v=beta&t=TGs1dlGQfsjY2RtyG8fP03YS4zGsiIFEQf_VCPZYGE0"
-      />
-      <Post
-        username="iamsrk"
-        caption="Shah Rukh agar thoda ruk bhi gaya to pathan ko kaise rokoge.. Apps aur Abs sbko bana dalunga.."
-        imageURL="https://im.rediff.com/movies/2022/mar/28insta1.jpg"
-      />
-      <Post />
-      <Post />
+
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          caption={post.caption}
+          imageURL={post.imageURL}
+        />
+      ))}
     </div>
   );
 }
