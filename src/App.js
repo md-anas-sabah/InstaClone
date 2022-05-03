@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Button } from "@mui/material";
 import { Input } from "@mui/material";
+import ImageUpload from "./ImageUpload";
 
 const style = {
   position: "absolute",
@@ -85,6 +86,7 @@ function App() {
 
   return (
     <div className="app">
+      <ImageUpload />
       <Modal open={open} onClose={() => setOpen(false)}>
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
